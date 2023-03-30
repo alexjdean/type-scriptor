@@ -1,1 +1,1 @@
-# type-scribe
+# type-scriptor

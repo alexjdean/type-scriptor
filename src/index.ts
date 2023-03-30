@@ -1,6 +1,3 @@
-function sayHello(): string {
-    return "Hello World!";
+export function echoMessage(message: string): string {
+    return `Hello ${message}`;
 }
-
-console.log(sayHello());
-module.exports = sayHello;
