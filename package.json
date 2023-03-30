@@ -1,0 +1,27 @@
+{
+  "name": "type-scribe",
+  "version": "1.0.0",
+  "description": "An NPM package that converts your JavaScript code to TypeScript code, adds type annotations, clear documentation, and unit tests",
+  "license": "MIT",
+  "repository": "https://github.com/alexanderjdean/type-scribe.git",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "typescript",
+    "js-to-ts",
+    "gpt4",
+    "unit-tests",
+    "generate-documentation"
+  ],
+  "author": "Alexander Dean",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.8"
+  }
+}
