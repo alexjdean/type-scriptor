@@ -1,6 +1,6 @@
 {
   "name": "type-scriptor",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "An NPM package that converts your JavaScript code to TypeScript code, adds type annotations, clear documentation, and unit tests",
   "license": "MIT",
   "repository": "https://github.com/alexanderjdean/type-scribe.git",
@@ -10,6 +10,9 @@
     "build": "tsc",
     "test": "vitest",
     "coverage": "vitest run --coverage"
+  },
+  "bin": {
+    "type-scriptor": "dist/cli.js"
   },
   "keywords": [
     "typescript",
