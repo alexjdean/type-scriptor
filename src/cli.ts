@@ -2,13 +2,9 @@
 
 import commandLineArgs from 'command-line-args';
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 import { twirlTimer, clearTwirlTimer } from './utils';
 import { validateCommand } from './validate';
-import { generateDocumentation } from './index';
-import { createDocumentationPrompt } from './prompts';
+import { documentCode, convertToTypeScript, refactorCode, testCode } from './index';
 
 async function main(): Promise<void> {
     const optionDefinitions = [
@@ -33,23 +29,16 @@ async function main(): Promise<void> {
     const code = lines.join('\n');
 
     if (parsedArguments.writeDocumenation) {
-        console.log(`Generating documentation for the file ${parsedArguments.filePath}...`);
-        const query = createDocumentationPrompt(code, parsedArguments.isTypeScript);
-        const documentedCode = await generateDocumentation(query, parsedArguments.apiKey);
-
-        // Get the original file's path, name, and extension
-        const originalFilePath = parsedArguments.filePath;
-        const fileDir = path.dirname(originalFilePath);
-        const fileName = path.basename(originalFilePath, path.extname(originalFilePath));
-        const fileExt = path.extname(originalFilePath);
-
-        // Create the modified file path with the "_modified" suffix
-        const modifiedFilePath = path.join(fileDir, `${fileName}_modified${fileExt}`);
-
-        // Write the documented code to the modified file
-        fs.writeFileSync(modifiedFilePath, documentedCode);
-
-        console.log(`\nDocumentation generated and saved to ${modifiedFilePath}`);
+        await documentCode(parsedArguments, code);
+        return;
+    } else if (parsedArguments.convertToTypeScript) {
+        await convertToTypeScript(parsedArguments, code);
+        return;
+    } else if (parsedArguments.refactor) {
+        await refactorCode(parsedArguments, code);
+        return;
+    } else if (parsedArguments.test) {
+        await testCode(parsedArguments, code);
         return;
     }
 }
