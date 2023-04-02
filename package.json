@@ -23,8 +23,16 @@
   ],
   "author": "Alexander Dean",
   "devDependencies": {
+    "@types/command-line-args": "^5.2.0",
+    "@types/minimist": "^1.2.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vitest": "^0.29.8"
+  },
+  "dependencies": {
+    "chalk": "^4",
+    "command-line-args": "^5.2.1",
+    "dotenv": "^16.0.3",
+    "recast": "^0.22.0"
   }
 }
