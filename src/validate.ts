@@ -1,14 +1,27 @@
+/**
+ * TypeScript file validator and transformer.
+ * @module index
+ */
+
 import * as path from 'path';
 import * as fs from 'fs';
 import { displayVersion, displayHelp, saveApiKey, loadApiKey } from './utils';
 
+/**
+ * The maximum number of lines a file can have to be processed by the program.
+ */
 const LINES_LIMIT = 1250;
 
-function createArgumentsObject(rawArguments: any): Array<any> {
+/**
+ * Creates an object containing the parsed command line arguments.
+ * @param {any} rawArguments - The raw command line arguments object.
+ * @returns {Array} - An array containing the parsed arguments object and the number of requested actions.
+ */
+export function createArgumentsObject(rawArguments: any): Array<any> {
     let parsedArguments = {
         showVersion: (!rawArguments.version ? false : true),
         showHelp: (!rawArguments.help ? false : true),
-        writeDocumenation: (!rawArguments.doc ? false : true),
+        writeDocumentation: (!rawArguments.doc ? false : true),
         convertToTypeScript: (!rawArguments['to-ts'] ? false : true),
         refactor: (!rawArguments.refactor ? false : true),
         test: (!rawArguments.test ? false : true),
@@ -26,10 +39,16 @@ function createArgumentsObject(rawArguments: any): Array<any> {
     apiKey = apiKey || loadApiKey();
     parsedArguments["apiKey"] = apiKey;
 
-    const actions = [parsedArguments.writeDocumenation, parsedArguments.convertToTypeScript, parsedArguments.refactor, parsedArguments.test].filter(Boolean).length;
+    const actions = [parsedArguments.writeDocumentation, parsedArguments.convertToTypeScript, parsedArguments.refactor, parsedArguments.test].filter(Boolean).length;
     return [parsedArguments, actions];
 }
 
+/**
+ * Validates the command line arguments and file path and returns them for further processing.
+ * @param {any} rawArguments - The raw command line arguments object.
+ * @returns {Array} - An array containing the parsed arguments object and an array of the file's code lines.
+ * @throws {Error} Will throw an error if the provided file path or command is invalid.
+ */
 export function validateCommand(rawArguments: any): Array<any> {
     let [parsedArguments, actions] = createArgumentsObject(rawArguments);
 

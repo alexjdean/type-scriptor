@@ -62,9 +62,9 @@ I have the following ${language} code file named ${file}:
 ${code}
 ----------------------------------------
 
-I would like you to test this code using Jest. Test the underlying code logic, consider edge cases, and make sure you cover all areas of the code.
+I would like you to write unit tests for this file using Jest. Write unit tests that test the underlying code logic, consider edge cases, and cover all areas of the code.
 
-Respond ONLY with the Jest unit test code file, and nothing else. Do not respond with any other text.
+Respond ONLY with the Jest unit tests, and nothing else. Do not respond with any other text.
     `;
     return prompt
 }

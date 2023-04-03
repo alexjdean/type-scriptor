@@ -28,7 +28,7 @@ async function main(): Promise<void> {
     const [parsedArguments, lines] = validatedArguments;
     const code = lines.join('\n');
 
-    if (parsedArguments.writeDocumenation) {
+    if (parsedArguments.writeDocumentation) {
         await documentCode(parsedArguments, code);
         return;
     } else if (parsedArguments.convertToTypeScript) {
