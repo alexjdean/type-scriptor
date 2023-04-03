@@ -2,7 +2,7 @@
 
 ![Tests](https://img.shields.io/badge/tests-100%25-brightgreen)
 
-Type-scriptor is an NPM package CLI tool that uses ChatGPT to improve your JavaScript and TypeScript code. It helps you write better code by automatically generating documentation, refactoring code to improve performance and maintainability, adding unit tests using Jest, and converting JavaScript code to TypeScript.
+`type-scriptor` is an NPM package CLI tool that uses ChatGPT to improve your JavaScript and TypeScript code. It helps you write better code by automatically generating documentation, refactoring code to improve performance and maintainability, adding unit tests using Jest, and converting JavaScript code to TypeScript.
 
 All the unit tests for this project were generated using this very tool!
 
