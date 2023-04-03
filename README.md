@@ -174,7 +174,7 @@ module.exports = {
 };
 ```
 
-Using `type-scriptor -f spaceship.js -d` command, our code becomes well-documented and clear to understand. We make it easier for new engineers to get up to speed on the codebase.
+Using the `type-scriptor -f spaceship.js -d` command, our code becomes well-documented and clear to understand. We make it easier for new engineers to get up to speed on the functionality of a given codebase.
 
 ```javascript
 /**
@@ -300,7 +300,7 @@ module.exports = {
 
 ### JavaScript to TypeScript
 
-Continuing with our spaceship-themed codebase, suppose we decided to migrate to TypeScript. Using `type-scriptor -f spaceship.js --to-ts` command, our codebase can now use the power of type annotations and be even clearer to understand.
+Continuing with our spaceship-themed codebase, suppose we decided to migrate to TypeScript. Using the `type-scriptor -f spaceship.js --to-ts` command, our codebase can now use type annotations to prevent potential errors and be even clearer to understand.
 
 ```typescript
 /**
@@ -415,7 +415,7 @@ export { Spaceship, createSpaceship, distanceBetweenPlanets, calculateTravelTime
 
 ### Refactoring
 
-We can go further. Suppose we wanted to improve the performance of our codebase. Using the `type-scriptor -f spaceship.ts -r` command, we can improve the performance and organization of our code, making it easier to understand and faster to run.
+We can go further. Suppose we wanted to improve the performance of our codebase. Using the `type-scriptor -f spaceship.ts -r` command, we can improve the performance and organization of our code, making it faster to run and easier to debug.
 
 ```typescript
 /**
