@@ -8,7 +8,6 @@ All the unit tests for this project were generated using this very tool!
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [Setting Up Your API Key](#setting-up-your-api-key)
@@ -38,10 +37,16 @@ All the unit tests for this project were generated using this very tool!
 
 ## Installation
 
-To install `type-scriptor`, run the following command:
+`type-scriptor` only supports Node versions 16 and 18. If you're using version 16, run the following command:
 
 ```bash
 npm install -g type-scriptor
+```
+
+If you're using Node version 18, run the following command:
+
+```bash
+npm install -g type-scriptor@1.1.0
 ```
 
 This will install `type-scriptor` globally on your system, making it available as a command-line tool.
